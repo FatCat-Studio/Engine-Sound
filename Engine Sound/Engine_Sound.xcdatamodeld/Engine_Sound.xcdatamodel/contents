@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1487" systemVersion="12A269" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="TKCars" representedClassName="TKCars" syncable="YES">
+        <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gearsNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic_inFirst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic_inSecond" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic_inThird" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic_outFirst" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic_outSecond" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pic_outThird" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_idle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_offhight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_offlow" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_offmid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_onhight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_onlow" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_onmid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sound_start" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeToHundred" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="companies" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="TKCompanies" inverseName="cars" inverseEntity="TKCompanies" syncable="YES"/>
+    </entity>
+    <entity name="TKCompanies" representedClassName="TKCompanies" syncable="YES">
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TKCars" inverseName="companies" inverseEntity="TKCars" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="TKCompanies" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="TKCars" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>

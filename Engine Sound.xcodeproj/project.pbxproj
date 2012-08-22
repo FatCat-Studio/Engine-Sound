@@ -1,0 +1,357 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55A1E1B815E304560095FBEA /* TKCompanies+Customization.m in Sources */ = {isa = PBXBuildFile; fileRef = 55A1E1B715E304560095FBEA /* TKCompanies+Customization.m */; };
+		55A1E1BB15E30A900095FBEA /* SECars.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 55A1E1BA15E3093D0095FBEA /* SECars.sqlite */; };
+		55A1E2B215E403920095FBEA /* Audi in Resources */ = {isa = PBXBuildFile; fileRef = 55A1E2AE15E403920095FBEA /* Audi */; };
+		55A1E2B315E403920095FBEA /* Mercedes in Resources */ = {isa = PBXBuildFile; fileRef = 55A1E2AF15E403920095FBEA /* Mercedes */; };
+		55A1E2B415E403920095FBEA /* BMW in Resources */ = {isa = PBXBuildFile; fileRef = 55A1E2B015E403920095FBEA /* BMW */; };
+		55A1E2B515E403920095FBEA /* Porsche in Resources */ = {isa = PBXBuildFile; fileRef = 55A1E2B115E403920095FBEA /* Porsche */; };
+		55CDFF1A15E2C52A00D3A4DF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CDFF1915E2C52A00D3A4DF /* UIKit.framework */; };
+		55CDFF1C15E2C52A00D3A4DF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CDFF1B15E2C52A00D3A4DF /* Foundation.framework */; };
+		55CDFF1E15E2C52A00D3A4DF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CDFF1D15E2C52A00D3A4DF /* CoreGraphics.framework */; };
+		55CDFF2015E2C52A00D3A4DF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55CDFF1F15E2C52A00D3A4DF /* CoreData.framework */; };
+		55CDFF2615E2C52A00D3A4DF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 55CDFF2415E2C52A00D3A4DF /* InfoPlist.strings */; };
+		55CDFF2815E2C52A00D3A4DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF2715E2C52A00D3A4DF /* main.m */; };
+		55CDFF2C15E2C52A00D3A4DF /* TKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF2B15E2C52A00D3A4DF /* TKAppDelegate.m */; };
+		55CDFF2F15E2C52A00D3A4DF /* Engine_Sound.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF2D15E2C52A00D3A4DF /* Engine_Sound.xcdatamodeld */; };
+		55CDFF3615E2C54100D3A4DF /* story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CDFF3515E2C54100D3A4DF /* story.storyboard */; };
+		55CDFF4115E2D3B300D3A4DF /* TKCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4015E2D3B300D3A4DF /* TKCompaniesViewController.m */; };
+		55CDFF4415E2D3C600D3A4DF /* TKModelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4315E2D3C600D3A4DF /* TKModelsViewController.m */; };
+		55CDFF4715E2D3F400D3A4DF /* TKCarDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4615E2D3F400D3A4DF /* TKCarDetailsViewController.m */; };
+		55CDFF4A15E2D40300D3A4DF /* TKCarRPMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4915E2D40300D3A4DF /* TKCarRPMViewController.m */; };
+		55CDFF4D15E2ECFD00D3A4DF /* TKCompanies.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4C15E2ECFC00D3A4DF /* TKCompanies.m */; };
+		55CDFF5015E2ECFD00D3A4DF /* TKCars.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4F15E2ECFD00D3A4DF /* TKCars.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		55A1E1B615E304560095FBEA /* TKCompanies+Customization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TKCompanies+Customization.h"; sourceTree = "<group>"; };
+		55A1E1B715E304560095FBEA /* TKCompanies+Customization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TKCompanies+Customization.m"; sourceTree = "<group>"; };
+		55A1E1BA15E3093D0095FBEA /* SECars.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = SECars.sqlite; sourceTree = "<group>"; };
+		55A1E2AE15E403920095FBEA /* Audi */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Audi; sourceTree = "<group>"; };
+		55A1E2AF15E403920095FBEA /* Mercedes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Mercedes; sourceTree = "<group>"; };
+		55A1E2B015E403920095FBEA /* BMW */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BMW; sourceTree = "<group>"; };
+		55A1E2B115E403920095FBEA /* Porsche */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Porsche; sourceTree = "<group>"; };
+		55CDFF1515E2C52A00D3A4DF /* Engine Sound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Engine Sound.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55CDFF1915E2C52A00D3A4DF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		55CDFF1B15E2C52A00D3A4DF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		55CDFF1D15E2C52A00D3A4DF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		55CDFF1F15E2C52A00D3A4DF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		55CDFF2315E2C52A00D3A4DF /* Engine Sound-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Engine Sound-Info.plist"; sourceTree = "<group>"; };
+		55CDFF2515E2C52A00D3A4DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		55CDFF2715E2C52A00D3A4DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55CDFF2915E2C52A00D3A4DF /* Engine Sound-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Engine Sound-Prefix.pch"; sourceTree = "<group>"; };
+		55CDFF2A15E2C52A00D3A4DF /* TKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAppDelegate.h; sourceTree = "<group>"; };
+		55CDFF2B15E2C52A00D3A4DF /* TKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAppDelegate.m; sourceTree = "<group>"; };
+		55CDFF2E15E2C52A00D3A4DF /* Engine_Sound.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Engine_Sound.xcdatamodel; sourceTree = "<group>"; };
+		55CDFF3515E2C54100D3A4DF /* story.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = story.storyboard; sourceTree = "<group>"; };
+		55CDFF3F15E2D3B300D3A4DF /* TKCompaniesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCompaniesViewController.h; sourceTree = "<group>"; };
+		55CDFF4015E2D3B300D3A4DF /* TKCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCompaniesViewController.m; sourceTree = "<group>"; };
+		55CDFF4215E2D3C600D3A4DF /* TKModelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKModelsViewController.h; sourceTree = "<group>"; };
+		55CDFF4315E2D3C600D3A4DF /* TKModelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKModelsViewController.m; sourceTree = "<group>"; };
+		55CDFF4515E2D3F400D3A4DF /* TKCarDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCarDetailsViewController.h; sourceTree = "<group>"; };
+		55CDFF4615E2D3F400D3A4DF /* TKCarDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCarDetailsViewController.m; sourceTree = "<group>"; };
+		55CDFF4815E2D40300D3A4DF /* TKCarRPMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCarRPMViewController.h; sourceTree = "<group>"; };
+		55CDFF4915E2D40300D3A4DF /* TKCarRPMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCarRPMViewController.m; sourceTree = "<group>"; };
+		55CDFF4B15E2ECFC00D3A4DF /* TKCompanies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCompanies.h; sourceTree = "<group>"; };
+		55CDFF4C15E2ECFC00D3A4DF /* TKCompanies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCompanies.m; sourceTree = "<group>"; };
+		55CDFF4E15E2ECFD00D3A4DF /* TKCars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCars.h; sourceTree = "<group>"; };
+		55CDFF4F15E2ECFD00D3A4DF /* TKCars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCars.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55CDFF1215E2C52A00D3A4DF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55CDFF1A15E2C52A00D3A4DF /* UIKit.framework in Frameworks */,
+				55CDFF1C15E2C52A00D3A4DF /* Foundation.framework in Frameworks */,
+				55CDFF1E15E2C52A00D3A4DF /* CoreGraphics.framework in Frameworks */,
+				55CDFF2015E2C52A00D3A4DF /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55CDFF0A15E2C52A00D3A4DF = {
+			isa = PBXGroup;
+			children = (
+				55CDFF2115E2C52A00D3A4DF /* Engine Sound */,
+				55CDFF1815E2C52A00D3A4DF /* Frameworks */,
+				55CDFF1615E2C52A00D3A4DF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55CDFF1615E2C52A00D3A4DF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55CDFF1515E2C52A00D3A4DF /* Engine Sound.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55CDFF1815E2C52A00D3A4DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55CDFF1915E2C52A00D3A4DF /* UIKit.framework */,
+				55CDFF1B15E2C52A00D3A4DF /* Foundation.framework */,
+				55CDFF1D15E2C52A00D3A4DF /* CoreGraphics.framework */,
+				55CDFF1F15E2C52A00D3A4DF /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55CDFF2115E2C52A00D3A4DF /* Engine Sound */ = {
+			isa = PBXGroup;
+			children = (
+				55A1E2AE15E403920095FBEA /* Audi */,
+				55A1E2AF15E403920095FBEA /* Mercedes */,
+				55A1E2B015E403920095FBEA /* BMW */,
+				55A1E2B115E403920095FBEA /* Porsche */,
+				55CDFF2A15E2C52A00D3A4DF /* TKAppDelegate.h */,
+				55CDFF2B15E2C52A00D3A4DF /* TKAppDelegate.m */,
+				55CDFF2D15E2C52A00D3A4DF /* Engine_Sound.xcdatamodeld */,
+				55CDFF4E15E2ECFD00D3A4DF /* TKCars.h */,
+				55CDFF4F15E2ECFD00D3A4DF /* TKCars.m */,
+				55CDFF4B15E2ECFC00D3A4DF /* TKCompanies.h */,
+				55CDFF4C15E2ECFC00D3A4DF /* TKCompanies.m */,
+				55A1E1B615E304560095FBEA /* TKCompanies+Customization.h */,
+				55A1E1B715E304560095FBEA /* TKCompanies+Customization.m */,
+				55CDFF2215E2C52A00D3A4DF /* Supporting Files */,
+				55CDFF3F15E2D3B300D3A4DF /* TKCompaniesViewController.h */,
+				55CDFF4015E2D3B300D3A4DF /* TKCompaniesViewController.m */,
+				55CDFF4215E2D3C600D3A4DF /* TKModelsViewController.h */,
+				55CDFF4315E2D3C600D3A4DF /* TKModelsViewController.m */,
+				55CDFF4515E2D3F400D3A4DF /* TKCarDetailsViewController.h */,
+				55CDFF4615E2D3F400D3A4DF /* TKCarDetailsViewController.m */,
+				55CDFF4815E2D40300D3A4DF /* TKCarRPMViewController.h */,
+				55CDFF4915E2D40300D3A4DF /* TKCarRPMViewController.m */,
+			);
+			path = "Engine Sound";
+			sourceTree = "<group>";
+		};
+		55CDFF2215E2C52A00D3A4DF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55A1E1BA15E3093D0095FBEA /* SECars.sqlite */,
+				55CDFF3515E2C54100D3A4DF /* story.storyboard */,
+				55CDFF2315E2C52A00D3A4DF /* Engine Sound-Info.plist */,
+				55CDFF2415E2C52A00D3A4DF /* InfoPlist.strings */,
+				55CDFF2715E2C52A00D3A4DF /* main.m */,
+				55CDFF2915E2C52A00D3A4DF /* Engine Sound-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55CDFF1415E2C52A00D3A4DF /* Engine Sound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55CDFF3215E2C52A00D3A4DF /* Build configuration list for PBXNativeTarget "Engine Sound" */;
+			buildPhases = (
+				55CDFF1115E2C52A00D3A4DF /* Sources */,
+				55CDFF1215E2C52A00D3A4DF /* Frameworks */,
+				55CDFF1315E2C52A00D3A4DF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Engine Sound";
+			productName = "Engine Sound";
+			productReference = 55CDFF1515E2C52A00D3A4DF /* Engine Sound.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55CDFF0C15E2C52A00D3A4DF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TK;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Timofey Korchagin";
+			};
+			buildConfigurationList = 55CDFF0F15E2C52A00D3A4DF /* Build configuration list for PBXProject "Engine Sound" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 55CDFF0A15E2C52A00D3A4DF;
+			productRefGroup = 55CDFF1615E2C52A00D3A4DF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55CDFF1415E2C52A00D3A4DF /* Engine Sound */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55CDFF1315E2C52A00D3A4DF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A1E1BB15E30A900095FBEA /* SECars.sqlite in Resources */,
+				55CDFF2615E2C52A00D3A4DF /* InfoPlist.strings in Resources */,
+				55CDFF3615E2C54100D3A4DF /* story.storyboard in Resources */,
+				55A1E2B215E403920095FBEA /* Audi in Resources */,
+				55A1E2B315E403920095FBEA /* Mercedes in Resources */,
+				55A1E2B415E403920095FBEA /* BMW in Resources */,
+				55A1E2B515E403920095FBEA /* Porsche in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55CDFF1115E2C52A00D3A4DF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55CDFF2815E2C52A00D3A4DF /* main.m in Sources */,
+				55CDFF2C15E2C52A00D3A4DF /* TKAppDelegate.m in Sources */,
+				55CDFF2F15E2C52A00D3A4DF /* Engine_Sound.xcdatamodeld in Sources */,
+				55CDFF4115E2D3B300D3A4DF /* TKCompaniesViewController.m in Sources */,
+				55CDFF4415E2D3C600D3A4DF /* TKModelsViewController.m in Sources */,
+				55CDFF4715E2D3F400D3A4DF /* TKCarDetailsViewController.m in Sources */,
+				55CDFF4A15E2D40300D3A4DF /* TKCarRPMViewController.m in Sources */,
+				55CDFF4D15E2ECFD00D3A4DF /* TKCompanies.m in Sources */,
+				55CDFF5015E2ECFD00D3A4DF /* TKCars.m in Sources */,
+				55A1E1B815E304560095FBEA /* TKCompanies+Customization.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		55CDFF2415E2C52A00D3A4DF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55CDFF2515E2C52A00D3A4DF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55CDFF3015E2C52A00D3A4DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		55CDFF3115E2C52A00D3A4DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55CDFF3315E2C52A00D3A4DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Engine Sound/Engine Sound-Prefix.pch";
+				INFOPLIST_FILE = "Engine Sound/Engine Sound-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		55CDFF3415E2C52A00D3A4DF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Engine Sound/Engine Sound-Prefix.pch";
+				INFOPLIST_FILE = "Engine Sound/Engine Sound-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55CDFF0F15E2C52A00D3A4DF /* Build configuration list for PBXProject "Engine Sound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55CDFF3015E2C52A00D3A4DF /* Debug */,
+				55CDFF3115E2C52A00D3A4DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55CDFF3215E2C52A00D3A4DF /* Build configuration list for PBXNativeTarget "Engine Sound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55CDFF3315E2C52A00D3A4DF /* Debug */,
+				55CDFF3415E2C52A00D3A4DF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		55CDFF2D15E2C52A00D3A4DF /* Engine_Sound.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				55CDFF2E15E2C52A00D3A4DF /* Engine_Sound.xcdatamodel */,
+			);
+			currentVersion = 55CDFF2E15E2C52A00D3A4DF /* Engine_Sound.xcdatamodel */;
+			path = Engine_Sound.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 55CDFF0C15E2C52A00D3A4DF /* Project object */;
+}
