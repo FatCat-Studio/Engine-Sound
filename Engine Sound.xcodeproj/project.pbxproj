@@ -24,10 +24,14 @@
 		55CDFF3615E2C54100D3A4DF /* story.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55CDFF3515E2C54100D3A4DF /* story.storyboard */; };
 		55CDFF4115E2D3B300D3A4DF /* TKCompaniesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4015E2D3B300D3A4DF /* TKCompaniesViewController.m */; };
 		55CDFF4415E2D3C600D3A4DF /* TKModelsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4315E2D3C600D3A4DF /* TKModelsViewController.m */; };
-		55CDFF4715E2D3F400D3A4DF /* TKCarDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4615E2D3F400D3A4DF /* TKCarDetailsViewController.m */; };
 		55CDFF4A15E2D40300D3A4DF /* TKCarRPMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4915E2D40300D3A4DF /* TKCarRPMViewController.m */; };
 		55CDFF4D15E2ECFD00D3A4DF /* TKCompanies.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4C15E2ECFC00D3A4DF /* TKCompanies.m */; };
 		55CDFF5015E2ECFD00D3A4DF /* TKCars.m in Sources */ = {isa = PBXBuildFile; fileRef = 55CDFF4F15E2ECFD00D3A4DF /* TKCars.m */; };
+		5814476F15E61CA90068E336 /* dark_wood.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5814476E15E61CA90068E336 /* dark_wood.jpeg */; };
+		5814477215E61E340068E336 /* bg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5814477115E61E340068E336 /* bg.jpeg */; };
+		5816B8C115E50B93009F89AD /* TKDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5816B8C015E50B93009F89AD /* TKDetailsViewController.m */; };
+		58D61D2915E4D855009D7FEC /* TKCompanyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D61D2815E4D855009D7FEC /* TKCompanyCell.m */; };
+		58D61D2C15E4DB1C009D7FEC /* TKModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D61D2B15E4DB1C009D7FEC /* TKModelCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,14 +59,20 @@
 		55CDFF4015E2D3B300D3A4DF /* TKCompaniesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCompaniesViewController.m; sourceTree = "<group>"; };
 		55CDFF4215E2D3C600D3A4DF /* TKModelsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKModelsViewController.h; sourceTree = "<group>"; };
 		55CDFF4315E2D3C600D3A4DF /* TKModelsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKModelsViewController.m; sourceTree = "<group>"; };
-		55CDFF4515E2D3F400D3A4DF /* TKCarDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCarDetailsViewController.h; sourceTree = "<group>"; };
-		55CDFF4615E2D3F400D3A4DF /* TKCarDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCarDetailsViewController.m; sourceTree = "<group>"; };
 		55CDFF4815E2D40300D3A4DF /* TKCarRPMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCarRPMViewController.h; sourceTree = "<group>"; };
 		55CDFF4915E2D40300D3A4DF /* TKCarRPMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCarRPMViewController.m; sourceTree = "<group>"; };
 		55CDFF4B15E2ECFC00D3A4DF /* TKCompanies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCompanies.h; sourceTree = "<group>"; };
 		55CDFF4C15E2ECFC00D3A4DF /* TKCompanies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCompanies.m; sourceTree = "<group>"; };
 		55CDFF4E15E2ECFD00D3A4DF /* TKCars.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCars.h; sourceTree = "<group>"; };
 		55CDFF4F15E2ECFD00D3A4DF /* TKCars.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKCars.m; sourceTree = "<group>"; };
+		5814476E15E61CA90068E336 /* dark_wood.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dark_wood.jpeg; sourceTree = "<group>"; };
+		5814477115E61E340068E336 /* bg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpeg; sourceTree = "<group>"; };
+		5816B8BF15E50B93009F89AD /* TKDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKDetailsViewController.h; sourceTree = "<group>"; };
+		5816B8C015E50B93009F89AD /* TKDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKDetailsViewController.m; sourceTree = "<group>"; };
+		58D61D2715E4D855009D7FEC /* TKCompanyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKCompanyCell.h; path = ../TKCompanyCell.h; sourceTree = "<group>"; };
+		58D61D2815E4D855009D7FEC /* TKCompanyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKCompanyCell.m; path = ../TKCompanyCell.m; sourceTree = "<group>"; };
+		58D61D2A15E4DB1C009D7FEC /* TKModelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKModelCell.h; sourceTree = "<group>"; };
+		58D61D2B15E4DB1C009D7FEC /* TKModelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKModelCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +121,8 @@
 		55CDFF2115E2C52A00D3A4DF /* Engine Sound */ = {
 			isa = PBXGroup;
 			children = (
+				5814476E15E61CA90068E336 /* dark_wood.jpeg */,
+				5814477115E61E340068E336 /* bg.jpeg */,
 				55A1E2AE15E403920095FBEA /* Audi */,
 				55A1E2AF15E403920095FBEA /* Mercedes */,
 				55A1E2B015E403920095FBEA /* BMW */,
@@ -129,10 +141,14 @@
 				55CDFF4015E2D3B300D3A4DF /* TKCompaniesViewController.m */,
 				55CDFF4215E2D3C600D3A4DF /* TKModelsViewController.h */,
 				55CDFF4315E2D3C600D3A4DF /* TKModelsViewController.m */,
-				55CDFF4515E2D3F400D3A4DF /* TKCarDetailsViewController.h */,
-				55CDFF4615E2D3F400D3A4DF /* TKCarDetailsViewController.m */,
+				5816B8BF15E50B93009F89AD /* TKDetailsViewController.h */,
+				5816B8C015E50B93009F89AD /* TKDetailsViewController.m */,
 				55CDFF4815E2D40300D3A4DF /* TKCarRPMViewController.h */,
 				55CDFF4915E2D40300D3A4DF /* TKCarRPMViewController.m */,
+				58D61D2715E4D855009D7FEC /* TKCompanyCell.h */,
+				58D61D2815E4D855009D7FEC /* TKCompanyCell.m */,
+				58D61D2A15E4DB1C009D7FEC /* TKModelCell.h */,
+				58D61D2B15E4DB1C009D7FEC /* TKModelCell.m */,
 			);
 			path = "Engine Sound";
 			sourceTree = "<group>";
@@ -209,6 +225,8 @@
 				55A1E2B315E403920095FBEA /* Mercedes in Resources */,
 				55A1E2B415E403920095FBEA /* BMW in Resources */,
 				55A1E2B515E403920095FBEA /* Porsche in Resources */,
+				5814476F15E61CA90068E336 /* dark_wood.jpeg in Resources */,
+				5814477215E61E340068E336 /* bg.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,11 +242,13 @@
 				55CDFF2F15E2C52A00D3A4DF /* Engine_Sound.xcdatamodeld in Sources */,
 				55CDFF4115E2D3B300D3A4DF /* TKCompaniesViewController.m in Sources */,
 				55CDFF4415E2D3C600D3A4DF /* TKModelsViewController.m in Sources */,
-				55CDFF4715E2D3F400D3A4DF /* TKCarDetailsViewController.m in Sources */,
 				55CDFF4A15E2D40300D3A4DF /* TKCarRPMViewController.m in Sources */,
 				55CDFF4D15E2ECFD00D3A4DF /* TKCompanies.m in Sources */,
 				55CDFF5015E2ECFD00D3A4DF /* TKCars.m in Sources */,
 				55A1E1B815E304560095FBEA /* TKCompanies+Customization.m in Sources */,
+				58D61D2915E4D855009D7FEC /* TKCompanyCell.m in Sources */,
+				58D61D2C15E4DB1C009D7FEC /* TKModelCell.m in Sources */,
+				5816B8C115E50B93009F89AD /* TKDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

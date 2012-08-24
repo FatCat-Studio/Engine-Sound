@@ -8,8 +8,12 @@
 
 #import "TKModelsViewController.h"
 #import "TKCompanies+Customization.h"
-#import "TKCarDetailsViewController.h"
+
+//#import "TKCarDetailsViewController.h"
+#import "TKDetailsViewController.h"
+
 #import "TKCars.h"
+#import "TKModelCell.h"
 
 @interface TKModelsViewController ()
 @property (nonatomic, strong) IBOutlet UINavigationItem *navItem;
@@ -37,8 +41,8 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"ModelsToCarDetailsSegue"]) {
-        TKCarDetailsViewController *carDetail = segue.destinationViewController;
+    if ([segue.identifier isEqualToString:@"ModelsToDetailsSegue"]) {
+        TKDetailsViewController *carDetail = segue.destinationViewController;
         carDetail.car = [self.companies.sortedCars objectAtIndex:
                          self.tableView.indexPathForSelectedRow.row];
         
@@ -59,12 +63,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ModelCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    TKCars *currentCar = [self.companies.cars.allObjects objectAtIndex:indexPath.row];
-    cell.textLabel.text = currentCar.model;
-    
+	static NSString *CellIdentifier = @"ModelCell";
+	TKModelCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if(cell == nil){
+		cell = [[TKModelCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+	}
+	TKCars *currentCar = [self.companies.cars.allObjects objectAtIndex:indexPath.row];
+	cell.companyNameLabel.text = currentCar.company;
+	cell.modelLabel.text = currentCar.model;
+	cell.thumbView.image = [UIImage imageNamed:currentCar.pic_inFirst];
     return cell;
 }
 

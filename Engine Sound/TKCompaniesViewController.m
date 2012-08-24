@@ -10,6 +10,7 @@
 #import "TKAppDelegate.h"
 #import "TKCompanies.h"
 #import "TKModelsViewController.h"
+#import "TKCompanyCell.h"
 
 @interface TKCompaniesViewController ()
 
@@ -24,6 +25,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+	
+//	UIImage *backgrounImage = [UIImage imageNamed:@"bg.jpeg"];
+//	self.tableView.backgroundColor = [UIColor colorWithPatternImage:backgrounImage];
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"TKCompanies"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor
@@ -71,13 +75,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CompaniesCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    TKCompanies *currentCompany = [self.companiesList objectAtIndex:indexPath.row];
-    cell.textLabel.text = currentCompany.name;
-
-    cell.imageView.image = [UIImage imageNamed:currentCompany.icon];
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+	TKCompanyCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+	if(cell == nil){
+		cell = [[TKCompanyCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+	}
+	TKCompanies *currentCompany = [self.companiesList objectAtIndex:indexPath.row];
+	cell.companyNameLabel.text = currentCompany.name;
+	cell.thumbView.image = [UIImage imageNamed:currentCompany.icon];	
     return cell;
 }
 

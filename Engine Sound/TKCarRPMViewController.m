@@ -15,6 +15,7 @@
 @end
 
 @implementation TKCarRPMViewController
+@synthesize navItem = _navItem;
 @synthesize label = _label;
 @synthesize car = _car;
 
@@ -22,7 +23,7 @@
 {
     [super viewDidLoad];
 	
-    self.navItem.title = [NSString stringWithFormat:@"%@ %@ - RPM", self.car.company, self.car.model];
+    self.navItem.title = [NSString stringWithFormat:@"%@ - RPM", self.car.model];
     self.label.text = self.car.sound_idle;
 }
 
