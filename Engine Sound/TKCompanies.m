@@ -2,7 +2,7 @@
 //  TKCompanies.m
 //  Engine Sound
 //
-//  Created by Timofey Korchagin on 21/08/2012.
+//  Created by Timofey Korchagin on 29/08/2012.
 //  Copyright (c) 2012 Timofey Korchagin. All rights reserved.
 //
 
@@ -12,8 +12,10 @@
 
 @implementation TKCompanies
 
-@dynamic name;
 @dynamic icon;
+@dynamic name;
+@dynamic invented;
+@dynamic firstLogo;
 @dynamic cars;
 
 @end

@@ -2,7 +2,7 @@
 //  TKCompanies.h
 //  Engine Sound
 //
-//  Created by Timofey Korchagin on 21/08/2012.
+//  Created by Timofey Korchagin on 29/08/2012.
 //  Copyright (c) 2012 Timofey Korchagin. All rights reserved.
 //
 
@@ -13,8 +13,10 @@
 
 @interface TKCompanies : NSManagedObject
 
-@property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * icon;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSNumber * invented;
+@property (nonatomic, retain) NSString * firstLogo;
 @property (nonatomic, retain) NSSet *cars;
 @end
 

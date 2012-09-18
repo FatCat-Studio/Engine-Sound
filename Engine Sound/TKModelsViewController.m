@@ -70,7 +70,7 @@
 	TKCars *currentCar = [self.companies.cars.allObjects objectAtIndex:indexPath.row];
 	cell.companyNameLabel.text = currentCar.company;
 	cell.modelLabel.text = currentCar.model;
-	cell.thumbView.image = [UIImage imageNamed:currentCar.pic_inFirst];
+	cell.thumbView.image = [UIImage imageNamed:currentCar.pic1];
     return cell;
 }
 

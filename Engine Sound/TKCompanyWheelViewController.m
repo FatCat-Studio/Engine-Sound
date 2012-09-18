@@ -9,11 +9,10 @@
 #import "TKCompanyWheelViewController.h"
 #import "TKAppDelegate.h"
 #import "TKCompanies.h"
-#import "TKModelsViewController.h"
+#import "TKModelsWheelViewController.h"
 
 @interface TKCompanyWheelViewController ()
 
-@property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSArray *companiesList;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) IBOutlet UILabel *companyNameLabel;
@@ -22,7 +21,6 @@
 
 @implementation TKCompanyWheelViewController
 @synthesize carousel;
-@synthesize items;
 @synthesize companiesList = _companiesList;
 @synthesize companyNameLabel = _companyNameLabel;
 
@@ -38,14 +36,6 @@
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor
                                                              sortDescriptorWithKey:@"name" ascending:YES]];
     self.companiesList = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
-	
-	self.items = [NSMutableArray array];
-	for (int i = 0; i < self.companiesList.count; i++)
-    {
-        [items addObject:[self.companiesList objectAtIndex:i]];
-		TKCompanies *currentCompany = [self.companiesList objectAtIndex:i];
-		NSLog(currentCompany.name);
-    }
 }
 
 #pragma mark View lifecycle
@@ -55,9 +45,9 @@
     [super viewDidLoad];
 
     //configure carousel
-	carousel.type = iCarouselTypeCoverFlow;
+	carousel.type = iCarouselTypeCoverFlow2;
 	carousel.contentOffset = CGSizeMake(0,0);
-	carousel.decelerationRate = 0.3;
+	carousel.decelerationRate = 0;
 
 }
 
@@ -75,10 +65,11 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"CompaniesToModelsSegue"]) {
-        TKModelsViewController *model = segue.destinationViewController;
-        model.companies = [self.companiesList objectAtIndex:self.carousel.currentItemIndex];
-        
+    if(self.companiesList.count != 0){
+        if ([segue.identifier isEqualToString:@"CompaniesToModelsSegue"]) {
+            TKModelsWheelViewController *model = segue.destinationViewController;
+            model.company = [self.companiesList objectAtIndex:self.carousel.currentItemIndex];
+        }
     }
 }
 
@@ -92,52 +83,64 @@
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return [items count];
+    return self.companiesList.count;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    UILabel *label = nil;
+    UIButton *button = (UIButton *)view;
     
-    //create new view if no view is available for recycling
-    if (view == nil)
-    {
-		TKCompanies *currentCompany = [self.items objectAtIndex:index];
-//		self.companyNameLabel.text = currentCompany.name;
-		
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 210.0f, 210.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:currentCompany.icon];
-		
-        view.contentMode = UIViewContentModeScaleToFill;
-        label = [[UILabel alloc] initWithFrame:view.bounds];
-        label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = UITextAlignmentCenter;
-        label.font = [label.font fontWithSize:20];
-		label.textColor = [UIColor whiteColor];
-        label.tag = 1;
-        [view addSubview:label];
-    }
-    else
-    {
-        //get a reference to the label in the recycled view
-        label = (UILabel *)[view viewWithTag:1];
+    if (self.companiesList.count == 0) {
+        UIImage *image = [UIImage imageNamed:@"page.png"];
+		button = [UIButton buttonWithType:UIButtonTypeCustom];
+		button.frame = CGRectMake(0.0f, 0.0f, 300.0, 200.0);
+		[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[button setBackgroundImage:image forState:UIControlStateNormal];
+		button.titleLabel.font = [button.titleLabel.font fontWithSize:40];
+		[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        //set button label
+        [button setTitle:[NSString stringWithFormat:@"%i", index] forState:UIControlStateNormal];
+        
+        return button;
     }
     
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
-//    label.text = [[items objectAtIndex:index] name];
+    // if we have one and more companies
+	if (button == nil)
+	{
+		//no button available to recycle, so create new one
+        TKCompanies *currentCompany = [self.companiesList objectAtIndex:index];
+		UIImage *image = [UIImage imageNamed:currentCompany.icon];
+		button = [UIButton buttonWithType:UIButtonTypeCustom];
+		button.frame = CGRectMake(0.0f, 0.0f, 200.0, 200.0);
+		[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+		[button setBackgroundImage:image forState:UIControlStateNormal];
+		button.titleLabel.font = [button.titleLabel.font fontWithSize:25];
+		[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	}
+	return button;
+}
+
+- (void)buttonTapped:(UIButton *)sender
+{
+    //get item index for button
+	NSInteger index = [carousel indexOfItemViewOrSubview:sender];
     
-    return view;
+	TKCompanies *currentCompany = [self.companiesList objectAtIndex:index];
+    
+    [[[UIAlertView alloc] initWithTitle:@"Button Tapped"
+                                 message:[NSString stringWithFormat:@"You tapped %@", currentCompany.name]
+                                delegate:nil
+                       cancelButtonTitle:@"OK"
+                       otherButtonTitles:nil] show];
 }
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)aCarousel
 {
-	TKCompanies *currentCompany = [self.items objectAtIndex:carousel.currentItemIndex];
-	self.companyNameLabel.text = currentCompany.name;
-	NSLog([NSString stringWithFormat:@"%d",self.carousel.currentItemIndex]);
+    if (self.companiesList.count != 0) {
+        TKCompanies *currentCompany = [self.companiesList objectAtIndex:carousel.currentItemIndex];
+        self.companyNameLabel.text = currentCompany.name;
+        //	NSLog([NSString stringWithFormat:@"%d",self.carousel.currentItemIndex]);
+    }
 }
 
 @end

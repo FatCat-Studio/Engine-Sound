@@ -13,7 +13,7 @@
 
 @interface TKModelsWheelViewController : UIViewController <iCarouselDataSource, iCarouselDelegate>
 
-@property  (nonatomic, strong) TKCompanies *companies;
+@property  (nonatomic, strong) TKCompanies *company;
 @property (nonatomic, strong) IBOutlet iCarousel *carousel;
 
 @end

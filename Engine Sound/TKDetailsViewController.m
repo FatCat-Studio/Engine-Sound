@@ -36,6 +36,7 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"DetailsToRPMSegue"]) {
         TKDetailsViewController *carRPM = segue.destinationViewController;

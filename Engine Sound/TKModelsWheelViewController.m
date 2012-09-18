@@ -9,6 +9,7 @@
 #import "TKModelsWheelViewController.h"
 #import "TKCompanies+Customization.h"
 #import "TKDetailsViewController.h"
+#import "TKDriveViewController.h"
 #import "TKCars.h"
 #import "TKCompanies.h"
 
@@ -19,15 +20,16 @@
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, strong) IBOutlet UINavigationItem *companyName;
 @property (nonatomic, strong) IBOutlet UIImageView *companyimage;
-
+@property (nonatomic, strong) IBOutlet UILabel *carModelLabel;
 @end
 
 @implementation TKModelsWheelViewController
-@synthesize companies = _companies;
+@synthesize company = _company;
 @synthesize carousel;
 @synthesize items;
 @synthesize companiesList = _companiesList;
 @synthesize companyName = _companyName;
+@synthesize carModelLabel = _carModelLabel;
 
 - (void)awakeFromNib
 {
@@ -39,21 +41,23 @@
 	
 	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"TKCompanies"];
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor
-                                                             sortDescriptorWithKey:@"name" ascending:YES]];
+                                                             sortDescriptorWithKey:@"name"
+                                                             ascending:YES]];
     self.companiesList = [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
 }
 
 - (void)viewDidLoad
 {
-	self.companyName.title = self.companies.name;
-	self.companyimage.image = [UIImage imageNamed:self.companies.icon];
-	self.companyimage.contentMode = UIViewContentModeScaleToFill;
+	self.companyName.title = self.company.name;
+//  self.companyimage.image = [UIImage imageNamed:self.company.icon];
+//	self.companyimage.contentMode = UIViewContentModeScaleToFill;
+//  self.companyimage.transform = CGAffineTransformMakeRotation(3.142);
     [super viewDidLoad];
 	
     //configure carousel
-	carousel.type = iCarouselTypeCoverFlow;
+	carousel.type = iCarouselTypeCoverFlow2;
 	carousel.contentOffset = CGSizeMake(0,0);
-	carousel.decelerationRate = 0.3;
+//	carousel.decelerationRate = 0.3;
 }
 
 - (void)viewDidUnload
@@ -70,10 +74,12 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([segue.identifier isEqualToString:@"ModelsToDetailsSegue"]) {
-        TKDetailsViewController *carDetail = segue.destinationViewController;
-        carDetail.car = [self.companies.sortedCars objectAtIndex:self.carousel.currentItemIndex];
-        
+    if (self.company.sortedCars.count != 0){
+        if ([segue.identifier isEqualToString:@"ModelsWheelToDriveSegue"]) {
+            TKDriveViewController *drive = segue.destinationViewController;
+            drive.car = [self.company.sortedCars objectAtIndex:
+                             self.carousel.currentItemIndex];
+        }
     }
 }
 
@@ -82,52 +88,63 @@
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
     //return the total number of items in the carousel
-    return self.companies.cars.count;;
+    return self.company.cars.count;;
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index reusingView:(UIView *)view
 {
-    UILabel *label = nil;
+	UIButton *button = (UIButton *)view;
     
-    //create new view if no view is available for recycling
-    if (view == nil)
-    {
-		TKCars *currentCar = [self.companies.cars.allObjects objectAtIndex:index];
-		
-        view = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 210.0f, 210.0f)];
-        ((UIImageView *)view).image = [UIImage imageNamed:@"page"];
-		
-        view.contentMode = UIViewContentModeScaleToFill;
-        label = [[UILabel alloc] initWithFrame:view.bounds];
-        label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = UITextAlignmentCenter;
-        label.font = [label.font fontWithSize:20];
-		label.textColor = [UIColor whiteColor];
-        label.tag = 1;
-        [view addSubview:label];
-		label.text = currentCar.model;
-    }
-    else
-    {
-        //get a reference to the label in the recycled view
-        label = (UILabel *)[view viewWithTag:1];
+    if (self.company.cars.count == 0) {
+        UIImage *image = [UIImage imageNamed:@"page.png"];
+		button = [UIButton buttonWithType:UIButtonTypeCustom];
+		button.frame = CGRectMake(0.0f, 0.0f, 300.0, 200.0);
+		[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[button setBackgroundImage:image forState:UIControlStateNormal];
+		button.titleLabel.font = [button.titleLabel.font fontWithSize:40];
+		[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+        //set button label
+        [button setTitle:[NSString stringWithFormat:@"%i", index] forState:UIControlStateNormal];
+        
+        return button;
     }
     
-    //set item label
-    //remember to always set any properties of your carousel item
-    //views outside of the `if (view == nil) {...}` check otherwise
-    //you'll get weird issues with carousel item content appearing
-    //in the wrong place in the carousel
-    
-    return view;
+	if (button == nil)
+	{
+//        TKCars *currentCar = [self.companies.cars.allObjects objectAtIndex:index];
+		//no button available to recycle, so create new one
+		UIImage *image = [UIImage imageNamed:@"bg.jpeg"];
+		button = [UIButton buttonWithType:UIButtonTypeCustom];
+		button.frame = CGRectMake(0.0f, 0.0f, 290.0f, 200.0f);
+		[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[button setBackgroundImage:image forState:UIControlStateNormal];
+        button.imageView.contentMode = UIViewContentModeScaleToFill;
+		button.titleLabel.font = [button.titleLabel.font fontWithSize:50];
+		[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	}
+	
+	return button;
+}
+
+- (void)buttonTapped:(UIButton *)sender
+{
+	//get item index for button
+	NSInteger index = [carousel indexOfItemViewOrSubview:sender];
+	
+    [[[UIAlertView alloc] initWithTitle:@"Button Tapped"
+                                 message:[NSString stringWithFormat:@"You tapped button number %i", index]
+                                delegate:nil
+                       cancelButtonTitle:@"OK"
+                       otherButtonTitles:nil] show];
 }
 
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)aCarousel
 {
-	TKCars *currentCar = [self.companies.cars.allObjects objectAtIndex:self.carousel.currentItemIndex];
-//	self.companyName.title = currentCar.company;
-	NSLog([NSString stringWithFormat:@"%d",self.carousel.currentItemIndex]);
+    if (self.company.cars.count != 0) {
+        TKCars *currentCar = [self.company.sortedCars objectAtIndex:self.carousel.currentItemIndex];
+        self.carModelLabel.text = currentCar.model;
+        //	NSLog([NSString stringWithFormat:@"%d",self.carousel.currentItemIndex]);
+    }
 }
-
 
 @end
